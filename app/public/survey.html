@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Friend Finder | Survey</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="public/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Survey Questions</h2>
+        <hr>
+            <form role="form" action="/api/friends">
+                    <h3>About You</h3>
+                <h4>Name (Required)</h4>
+                <input type="text" id="name" class="form-control" required>
+                <h4>Link to profile image (Required)</h4>
+                <input type="text" id="profilePic" class="form-control" required>
+                <hr>
+                <div class="form-group">
+
+                <select class="form-control" id="q1" style="width: 300px">
+              <option value="" selected disabled>Select an Option</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+                </select>
+                <br>
+                <hr>
+              <label for="q2"><h3>Question 2</h3><h4>You put Sriracha sauce on everything.</h4></label>
+              <select class="form-control" id="q2" style="width: 300px">
+              <option value="" selected disabled>Select an Option</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <br>
+              <hr>
+              <label for="q3"><h3>Question 3</h3><h4>You run for fun.</h4></label>
+              <select class="form-control" id="q3" style="width: 300px">
+              <option value="" selected disabled>Select an Option</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <br>
+              <hr>
+              <label for="q4"><h3>Question 4</h3><h4>Generally speaking, you rely more on your experience than your imagination.</h4></label>
+              <select class="form-control" id="q4" style="width: 300px">
+              <option value="" selected disabled>Select an Option</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <br>
+              <hr>
+              <label for="q5"><h3>Question 5</h3><h4>You rarely get carried away by fantasies and ideas.</h4></label>
+              <select class="form-control" id="q5" style="width: 300px">
+              <option value="" selected disabled>Select an Option</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <br>
+              <hr>
+              <label for="q6"><h3>Question 6</h3><h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4></label>
+              <select class="form-control" id="q6" style="width: 300px">
+              <option value="" selected disabled>Select an Option</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <br>
+              <hr>
+              <label for="q7"><h3>Question 7</h3><h4>You feel more energetic after spending time with a group of people.</h4></label>
+              <select class="form-control" id="q7" style="width: 300px">
+              <option value="" selected disabled>Select an Option</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <br>
+              <hr>
+              <label for="q8"><h3>Question 8</h3><h4>People can rarely upset you.</h4></label>
+              <select class="form-control" id="q8" style="width: 300px">
+              <option value="" selected disabled>Select an Option</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <br>
+              <hr>
+              <label for="q9"><h3>Question 9</h3><h4>You rarely do something just out of sheer curiosity.</h4></label>
+              <select class="form-control" id="q9" style="width: 300px">
+              <option value="" selected disabled>Select an Option</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <br>
+              <hr>
+              <label for="q10"><h3>Question 10</h3><h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4></label>
+              <select class="form-control" id="q10" style="width: 300px">
+              <option value="" selected disabled>Select an Option</option>
+              <option value="1">1 (Strongly Disagree)</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 (Strongly Agree)</option>
+              </select>
+              <br>
+                </div>
+            </form>
+        <div class="">
+          <button type="submit" class="btn btn-primary btn-lg" id="submit"><i class="fa fa-check-square-o"></i> Submit</button>
+        </div>
+        <br>
+        <hr>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p> Kathleen Zelony &copy; 2017 | <a href="https://github.com/kathleenzee/FriendFinder">GitHub Repo <i class="fa fa-github" aria-hidden="true"></i></a> | <a href="/api/friends">Friends API List</a>
+        </p>
+      </div>
+    </footer>
+
+    </div>
+    <!-- modal pop up -->
+    <div id="friendMatchModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">X</button>
+                <h2 class="modal-title">Your Friend Match</h2>
+            </div>
+            <div class="modal-body">
+                <h2 id="friendMatchName"></h2>
+                <img id="friendMatchImage" src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=3408792" width=500px>
+            </div>
+        </div>
+    </div>
+</div>
+  <script type="text/javascript">
+    $('#submit').on("click", function() {
+            var inputData = {
+                name: $('#name').val(),
+                photo: $('#profilePic').val(),
+                scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(),$("#q6").val(), $("#q7").val(), $("#q8").val(), $("#q9").val(), $("#q10").val()]
+            }
+        var currentURL = window.location.origin;
+            $.post(currentURL, + "/api/friends", inputData, function(data) {
+                    $("#friendMatchName").text(data.name);
+                    $("#friendMatchImage").attr("src", data.photo);
+                    $("#friendMatchModal").openModal();
+        });
+        $('#name').val("");
+        $('#profilePic').val("");
+        $('#q1').val("");
+        $('#q2').val("");
+        $('#q3').val("");
+        $('#q4').val("");
+        $('#q5').val("");
+                $('#q6').val("");
+        $('#q7').val("");
+        $('#q8').val("");
+        $('#q9').val("");
+        $('#q10').val("");
+        
+    return false;
+    });
+  </script>
+
+</body>
+</html>

@@ -1,43 +1,39 @@
-console.log("api-route working!")
-var friendList = require('../data/friends.js');
+var path = require('path');
+var bodyParser = require('body-parser');
+var friendsList = require('../data/friends.js');
 
-module.exports = function(app){
-  //a GET route that displays JSON of all possible friends
-  app.get('/api/friends', function(req,res){
-    res.json(friendList);
+module.exports = function(app) {
+  app.get("/api/friends", function (req, res) {
+    res.json(friendsList);
   });
 
-  app.post('/api/friends', function(req,res){
-    //grabs the new friend's scores to compare with friends in friendList array
-    var newFriendScores = req.body.scores;
-    var scoresArray = [];
-    var friendCount = 0;
-    var bestMatch = 0;
+  app.post("/api/friends", function (req, res) {
+    var user = req.body;
+    var userIndex = 0;
+    var diffArray = [];
+    var inputScores = req.body.score;
 
-    //runs through all current friends in list
-    for(var i=0; i<friendList.length; i++){
-      var scoresDiff = 0;
-      //run through scores to compare friends
-      for(var j=0; j<newFriendScores.length; j++){
-        scoresDiff += (Math.abs(parseInt(friendList[i].scores[j]) - parseInt(newFriendScores[j])));
+    for (var i = 0; i < friendsList.length-1; i++) {
+      var iteratedUser = friendsList[i].score;
+      var totalDiff = 0;
+      for (var j = 0; j < inputScores.length; j ++) {
+        var sum = Math.abs(parseInt(inputScores[j]) - parseInt(iteratedUser[j]));
+        totalDiff += sum;
       }
-
-      //push results into scoresArray
-      scoresArray.push(scoresDiff);
+      diffArray.push(totalDiff);
     }
-
-    //after all friends are compared, find best match
-    for(var i=0; i<scoresArray.length; i++){
-      if(scoresArray[i] <= scoresArray[bestMatch]){
-        bestMatch = i;
+    function indexLowest(low) {
+      var lowest = 0;
+      for (var i = 1; i < low.length; i++) {
+        if (low[i] < low[lowest]) {
+          lowest = i;
+        }
+        return lowest;
       }
+      var returnedIndex = indexLowest(diffArray);
     }
+    res.json(friendsList[returnedIndex]);
 
-    //return bestMatch data
-    var bff = friendList[bestMatch];
-    res.json(bff);
 
-    //pushes new submission into the friendsList array
-    friendList.push(req.body);
   });
 };
